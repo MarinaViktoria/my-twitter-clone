@@ -1,5 +1,6 @@
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import Link from "next/link";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -22,6 +23,49 @@ export default function RootLayout({ children }) {
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
+        <header className="border bg-blue-300 text-white py-4 px-6 shadow-md flex flex-col md:flex-row items-start md:items-center">
+          <h1 className="text-2xl font-bold mb-4 md:mb-0 md:mr-32 whitespace-nowrap">
+            Let`s T-weet
+          </h1>
+          <nav className="flex flex-wrap gap-4 md:gap-6 md:flex-grow md:justify-between text-xl">
+            <Link
+              href="/"
+              className="hover:text-blue-400 transition duration:200"
+            >
+              Home
+            </Link>
+            <Link
+              href="/explore"
+              className="hover:text-blue-400 transition duration:200"
+            >
+              Explore Tweets
+            </Link>
+            <Link
+              href="/post"
+              className="hover:text-blue-400 transition duration:200"
+            >
+              Post a Tweet
+            </Link>
+            <Link
+              href="/trending"
+              className="hover:text-blue-400 transition duration:200"
+            >
+              Trending
+            </Link>
+            <Link
+              href="/profile"
+              className="hover:text-blue-400 transition duration:200"
+            >
+              My Profile
+            </Link>
+            <Link
+              href="/login"
+              className="hover:text-blue-400 transition duration:200"
+            >
+              LogIn
+            </Link>
+          </nav>
+        </header>
         {children}
       </body>
     </html>
