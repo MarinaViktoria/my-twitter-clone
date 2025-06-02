@@ -5,9 +5,9 @@ import { Tweet } from "../../../../lib/models/Tweet";
 export async function GET() {
   await makeSureDbIsReady();
   try {
-    const tweets = await Tweet.find({});
+    const tweets = await Tweet.find({}).sort({ createdAt: -1 });
     //const tweets = await Tweet.find({}).sort({createdAt: -1})); //descending(newest first) //+1(latest fürst)
-    return NextResponse.json({ message: "result", tweets }, { status: 200 });
+    return NextResponse.json({ tweets }, { status: 200 });
   } catch (error) {
     return NextResponse.json(
       { error: "Error fetching tweets" },
@@ -20,8 +20,7 @@ export async function POST(req) {
   await makeSureDbIsReady();
 
   try {
-    const body = await req.json();
-    const { name, text } = body;
+    const { name, text } = await req.json();
 
     if (!name || !text) {
       return NextResponse.json(

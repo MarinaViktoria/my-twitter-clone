@@ -34,13 +34,14 @@ export default function TweetDetail({ params }) {
       <h1 className="text-2xl font-bold mb-4">{tweet.name}</h1>
       <p className="mb-4">{tweet.text}</p>
 
-      <Link
-        className="mt-8"
-        href="/"
-        style={{ color: "blue", textDecoration: "underline" }}
-      >
-        ← Back to Feed
-      </Link>
+      <div className="flex justify-center mt-8 p-6">
+        <Link
+          href="/"
+          className="text-blue-600 underline text-center transition-all duration-300 ease-in-out hover:text-blue-800 hover:-translate-y-0.5"
+        >
+          ← Back to Feed
+        </Link>
+      </div>
     </div>
   );
 }

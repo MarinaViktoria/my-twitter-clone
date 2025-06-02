@@ -20,3 +20,10 @@ export async function GET(_req, { params }) {
     );
   }
 }
+
+export async function DELETE(_req, { params }) {
+  await makeSureDbIsReady();
+
+  const tweetDeleted = await Tweet.findByIdAndDelete(params.id);
+  return NextResponse.json(tweetDeleted);
+}

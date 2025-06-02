@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { useRouter } from "next/navigation";
+import Link from "next/link";
 
 export default function PostTweetPage() {
   const [name, setName] = useState("");
@@ -12,6 +13,8 @@ export default function PostTweetPage() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    setName(" ");
+    setText(" ");
     setError(null);
 
     try {
@@ -37,32 +40,49 @@ export default function PostTweetPage() {
   };
 
   return (
-    <div className="max-w-md mx-auto mt-10 p-6 border border-blue-300 rounded">
-      <h1 className="text-xl font-bold mb-4">Post a New Tweet</h1>
-      <form onSubmit={handleSubmit} className="flex flex-col gap-4">
-        <input
-          className="border p-2"
-          type="text"
-          placeholder="Your name"
-          value={name}
-          onChange={(e) => setName(e.target.value)}
-          required
-        />
-        <textarea
-          className="border p-2"
-          placeholder="What's on your mind?"
-          value={text}
-          onChange={(e) => setText(e.target.value)}
-          required
-        />
-        <button
-          type="submit"
-          className="bg-blue-400 text-white py-2 px-4 rounded hover:bg-blue-500"
+    <>
+      <div className="max-w-md mx-auto mt-10 p-6 border border-blue-300 rounded">
+        <h1 className="text-xl font-bold mb-4">Post a New Tweet</h1>
+        <form onSubmit={handleSubmit} className="flex flex-col gap-4">
+          <input
+            className="border p-2"
+            type="text"
+            placeholder="Your name"
+            value={name}
+            spellCheck={false}
+            onChange={(e) => setName(e.target.value)}
+            required
+          />
+          <textarea
+            className="border p-2"
+            placeholder="What's on your mind?"
+            value={text}
+            spellCheck={false}
+            onChange={(e) => setText(e.target.value)}
+            onKeyDown={(e) => {
+              if (e.key === "Enter") {
+                handleSubmit(e);
+              }
+            }}
+            required
+          />
+          <button
+            type="submit"
+            className="bg-blue-400 text-white py-2 px-4 rounded hover:bg-blue-500"
+          >
+            Tweet it!
+          </button>
+          {error && <p className="text-red-500">{error}</p>}
+        </form>
+      </div>
+      <div className="flex justify-center mt-8 p-6">
+        <Link
+          href="/"
+          className="text-blue-600 underline text-center transition-all duration-300 ease-in-out hover:text-blue-800 hover:-translate-y-0.5"
         >
-          Tweet it!
-        </button>
-        {error && <p className="text-red-500">{error}</p>}
-      </form>
-    </div>
+          ← Back to Feed
+        </Link>
+      </div>
+    </>
   );
 }
