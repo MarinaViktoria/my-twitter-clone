@@ -3,6 +3,9 @@ import ButtonTweet from "components/ButtonTweet";
 import TweeterCard from "components/TweeterCard";
 import Link from "next/link";
 
+import { cookies } from "next/headers";
+import { getUserFromToken } from "lib/auth";
+
 async function getTweets() {
   const res = await fetch("http://localhost:3000/api/tweets", {
     cache: "no-store",
@@ -18,6 +21,10 @@ async function getTweets() {
 export default async function Home() {
   const tweets = await getTweets();
 
+  const cookie = await cookies();
+  const token = cookie.get("authToken")?.value;
+  const user = token ? await getUserFromToken(token) : null;
+
   return (
     <div className="min-h-screen p-4 sm:p-8 pb-20">
       <main className="max-w-7xl mx-auto">
@@ -31,6 +38,8 @@ export default async function Home() {
 
           <ButtonTweet />
         </div>
+
+        {/*<h1>Welcome {user?.username ?? "Guest"}!</h1>*/}
 
         <div className="flex flex-col lg:flex-row gap-4 sm:gap-8 lg:gap-16 w-full max-w-8xl p-4">
           <div className="flex-1 border border-blue-300 rounded-lg p-4">

@@ -49,9 +49,7 @@ export default function Login() {
 
   return (
     <div>
-      <div>
-        <h1>Hello {user ? user.username : "Stranger"}</h1>
-      </div>
+      <div>{/*<h1>Hello {user ? user.username : "Guest"}</h1>*/}</div>
 
       <div className="max-w-md mx-auto mt-20 p-6 border border-blue-300 rounded shadow">
         <h1 className="text-2xl font-bold mb-6 text-center">Log in</h1>
