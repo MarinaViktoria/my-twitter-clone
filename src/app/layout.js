@@ -65,6 +65,12 @@ export default function RootLayout({ children }) {
             >
               LogIn
             </Link>
+            <Link
+              href="/signup"
+              className="hover:text-blue-400 transition duration:200"
+            >
+              SignUp
+            </Link>
           </nav>
         </header>
 

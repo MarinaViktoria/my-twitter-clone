@@ -41,9 +41,11 @@ export default function PostTweetPage() {
 
   return (
     <>
-      <div className="max-w-md mx-auto mt-10 p-6 border border-blue-300 rounded">
-        <h1 className="text-xl font-bold mb-4">Post a New Tweet</h1>
-        <form onSubmit={handleSubmit} className="flex flex-col gap-4">
+      <div className="max-w-md mx-auto mt-20 p-6 border border-blue-300 rounded shadow">
+        <h1 className="text-2xl font-bold mb-6 text-center">
+          Post a New Tweet
+        </h1>
+        <form onSubmit={handleSubmit} className="flex flex-col gap-2">
           <input
             className="border p-2"
             type="text"
@@ -68,7 +70,7 @@ export default function PostTweetPage() {
           />
           <button
             type="submit"
-            className="bg-blue-400 text-white py-2 px-4 rounded hover:bg-blue-500"
+            className="mt-4 cursor-pointer bg-blue-400 text-white p-2 rounded hover:bg-blue-500"
           >
             Tweet it!
           </button>

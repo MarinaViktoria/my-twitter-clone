@@ -7,7 +7,7 @@ export default function ButtonTweet() {
   return (
     <button
       onClick={() => router.push("/post")}
-      className="cursor-pointer mx-auto border bg-blue-300 text-white py-2 px-6 mb-16 hover:bg-blue-400 transition duration-200"
+      className="cursor-pointer mx-auto border bg-blue-400 text-white py-2 px-6 mb-16 hover:bg-blue-500 transition duration-200"
     >
       Start tweeting
     </button>
