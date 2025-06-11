@@ -1,4 +1,3 @@
-import ButtonLogout from "components/ButtonLogout";
 import TweeterCard from "../../../components/TweeterCard";
 import Link from "next/link";
 
@@ -22,7 +21,6 @@ export default async function Explore() {
           ))}
         </ul>
       </main>
-      <ButtonLogout />
     </div>
   );
 }

@@ -13,8 +13,8 @@ export default function PostTweetPage() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    setName("");
-    setText("");
+    setName(" ");
+    setText(" ");
     setError(null);
 
     try {

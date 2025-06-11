@@ -1,16 +1,15 @@
 "use client";
 
-import { useAuth } from "../context/AuthContext";
+//import { useAuth } from "../context/AuthContext";
 import { useState } from "react";
 import { useRouter } from "next/navigation";
 
 export default function Login() {
-  const { user, setUser } = useAuth();
+  //const { user } = useAuth();
 
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
-
   const router = useRouter();
 
   async function handleLogin(e) {
@@ -27,8 +26,6 @@ export default function Login() {
       });
 
       if (res.ok) {
-        setUser({ username });
-
         router.push("/"); // weiterleiten, weil erfolgreich
       } else {
         const errorText = await res.text();
