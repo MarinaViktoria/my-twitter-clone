@@ -15,7 +15,7 @@ export default async function Explore() {
         <ul>
           {tweets.map((tweet) => (
             <li key={tweet._id}>
-              <Link href={`/tweet/${tweet._id}`}>
+              <Link href={`tweet/${tweet._id}`}>
                 <TweeterCard tweet={tweet} />
               </Link>
             </li>

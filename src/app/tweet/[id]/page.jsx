@@ -1,8 +1,8 @@
 "use client";
 import { useParams } from "next/navigation";
-
 import { useEffect, useState } from "react";
 import Link from "next/link";
+//import ButtonLike from "components/ButtonLike";
 
 export default function TweetDetail({ params }) {
   const { id } = useParams();
@@ -34,6 +34,7 @@ export default function TweetDetail({ params }) {
       <h1 className="text-2xl font-bold mb-4">{tweet.name}</h1>
       <p className="mb-4">{tweet.text}</p>
 
+    
       <div className="flex justify-center mt-8 p-6">
         <Link
           href="/"

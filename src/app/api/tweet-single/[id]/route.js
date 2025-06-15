@@ -2,11 +2,12 @@ import { NextResponse } from "next/server";
 import { makeSureDbIsReady } from "../../../../../lib/db";
 import { Tweet } from "../../../../../lib/models/Tweet";
 
-export async function GET(_req, { params }) {
+export async function GET(_req, context) {
   await makeSureDbIsReady();
 
   try {
-    const tweet = await Tweet.findById(params.id);
+    const id = context.params.id;
+    const tweet = await Tweet.findById(id);
 
     if (!tweet) {
       return NextResponse.json({ error: "Tweet not found" }, { status: 404 });
@@ -21,9 +22,11 @@ export async function GET(_req, { params }) {
   }
 }
 
-export async function DELETE(_req, { params }) {
+export async function DELETE(_req, context) {
   await makeSureDbIsReady();
 
-  const tweetDeleted = await Tweet.findByIdAndDelete(params.id);
+  const id = context.params.id;
+
+  const tweetDeleted = await Tweet.findByIdAndDelete(id);
   return NextResponse.json(tweetDeleted);
 }

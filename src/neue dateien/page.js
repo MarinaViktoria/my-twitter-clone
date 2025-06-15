@@ -49,9 +49,7 @@ export default async function Home() {
             <ul>
               {tweets.slice(0, 3).map((tweet) => (
                 <li key={tweet._id}>
-                  <Link href={`tweet/${tweet._id}`}>
-                    <TweeterCard tweet={tweet} />
-                  </Link>
+                  <TweeterCard tweet={tweet} />
                 </li>
               ))}
             </ul>
