@@ -1,6 +1,7 @@
 import TypingWelcome from "components/TypingWelcome";
 import ButtonTweet from "components/ButtonTweet";
 import TweeterCard from "components/TweeterCard";
+import TrendTweet from "components/TrendTweet";
 import Link from "next/link";
 
 import { cookies } from "next/headers";
@@ -29,7 +30,7 @@ export default async function Home() {
   return (
     <div className="min-h-screen p-4 sm:p-8 pb-20">
       <main className="max-w-7xl mx-auto">
-        <div className="text-center mb-8 sm:mb-12">
+        <div className="text-center mb-8 sm:mb-2">
           <TypingWelcome />
 
           <h4 className="text-gray-600 max-w-2xl mx-auto px-4 mb-6 sm:mb-8">
@@ -56,8 +57,8 @@ export default async function Home() {
           </div>
 
           <div className="w-full lg:w-1/3 flex flex-col gap-4">
-            <div className="border border-blue-300 rounded p-4 h-64 lg:h-112">
-              <h2>Hier ist Platz für Trends!!!</h2>
+            <div className="border border-blue-300 rounded p-4 h-36 lg:h-44 overflow-auto">
+              <TrendTweet />
             </div>
           </div>
         </div>

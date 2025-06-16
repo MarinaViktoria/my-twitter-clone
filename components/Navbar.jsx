@@ -14,33 +14,35 @@ export default function Navbar() {
   };
 
   return (
-    <nav className="flex flex-wrap gap-4 md:gap-6 md:flex-grow md:justify-between text-xl">
+    <nav className="text-xl flex flex-col gap-2 md:flex-row md:items-center md:justify-between w-full">
       {/* Navigation Links */}
-      <Link href="/" className="hover:text-blue-400 transition duration:200">
-        Home
-      </Link>
-      <Link
-        href="/explore"
-        className="hover:text-blue-400 transition duration:200"
-      >
-        Explore Tweets
-      </Link>
-      <Link
-        href="/post"
-        className="hover:text-blue-400 transition duration:200"
-      >
-        Post a Tweet
-      </Link>
+      <div className="flex flex-col gap-2 md:flex-row md:gap-12 items-start md:items-center md:mx-auto">
+        <Link href="/" className="hover:text-blue-400 transition duration:200">
+          Home
+        </Link>
+        <Link
+          href="/explore"
+          className="hover:text-blue-400 transition duration:200"
+        >
+          Explore Tweets
+        </Link>
+        <Link
+          href="/post"
+          className="hover:text-blue-400 transition duration:200"
+        >
+          Post a Tweet
+        </Link>
+      </div>
 
       {/* Auth Section */}
-      <div className="flex items-center space-x-6">
+      <div className="flex flex-col items-start gap-2 md:flex-row md:items-center md:gap-4">
         {isLoading ? (
           // Loading state
           <div className="w-20 h-8 bg-gray-200 animate-pulse rounded"></div>
         ) : user ? (
           // Logged in - Show user info and logout
-          <div className="flex items-center space-x-3">
-            <span className="text-sm text-gray-700">
+          <div className="flex flex-col md:flex-row md:items-center md:gap-4">
+            <span className="text-sm text-gray-700 bg-white px-2 py-1 rounded">
               Hello, {user.username}!
             </span>
             <button
@@ -52,7 +54,7 @@ export default function Navbar() {
           </div>
         ) : (
           // Not logged in - Show login/signup
-          <div className="flex items-center space-x-6">
+          <div className="flex flex-col items-start gap-2 md:flex-row md:gap-4">
             <Link
               href="/login"
               className="hover:text-blue-400 transition duration:200"

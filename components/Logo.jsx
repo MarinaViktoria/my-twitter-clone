@@ -1,5 +1,5 @@
-/*"use client";
-import logo from "././logo";
+"use client";
+import Image from "next/image";
 import { useRouter } from "next/navigation";
 
 export default function Logo() {
@@ -8,9 +8,9 @@ export default function Logo() {
   return (
     <div
       onClick={() => router.push("/")}
-      className="rounded-full h-14 w-14 p-4 flex items-center justify-center cursor-pointer"
+      className="h-14 w-14 md:h-16 md:w-16 cursor-pointer flex items-center justify-center"
     >
-      <img src={logo} />
+      <Image src="/logo.png" alt="Logo" width={64} height={64} />
     </div>
   );
-}*/
+}

@@ -1,7 +1,7 @@
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { AuthContextProvider } from "./context/AuthContext";
-//import Logo from "components/Logo";
+import Logo from "components/Logo";
 import Navbar from "components/Navbar";
 
 const geistSans = Geist({
@@ -26,14 +26,17 @@ export default function RootLayout({ children }) {
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         <AuthContextProvider>
-          <header className="border bg-blue-300 text-white py-4 px-6 shadow-md flex flex-col md:flex-row items-start md:items-center">
-            {/*<Logo />*/}
+          <header className="bg-blue-300 text-white py-6 px-4 shadow-md">
+            <div className="max-w-7xl mx-auto flex flex-col md:flex-row md:items-center md:justify-between gap-4">
+              <div className="flex items-center gap-4">
+                <Logo />
+                <h1 className="text-2xl font-bold whitespace-nowrap">
+                  Let`s T-weet
+                </h1>
+              </div>
 
-            <h1 className="text-2xl font-bold mb-4 md:mb-0 md:mr-32 whitespace-nowrap">
-              Let`s T-weet
-            </h1>
-
-            <Navbar />
+              <Navbar />
+            </div>
           </header>
 
           {children}

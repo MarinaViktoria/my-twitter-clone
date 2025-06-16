@@ -37,7 +37,7 @@ export default function ButtonLike({ tweetId }) {
         handleLike();
       }}
       disabled={isLiking}
-      className="mt-2 inline-flex items-center bg-blue-500 text-white px-3 py-1 rounded hover:bg-blue-600 text-sm"
+      className="cursor-pointer mt-2 inline-flex items-center bg-blue-400 text-white px-3 py-1 rounded hover:bg-blue-500 text-sm"
     >
       👍 {likes}
     </button>
