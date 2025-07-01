@@ -1,36 +1,98 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+Twitter Clone - This is a [Next.js](https://nextjs.org) project.
 
-## Getting Started
+## About the project
 
-First, run the development server:
+This project was created to learn Next.js (including Server‑Side Rendering and Client‑Side Rendering), dynamic routing, API integration, authentication workflows, MongoDB database integration using Mongoose schemas, as well as Tailwind CSS. It was completed as an assignment during a Full‑Stack bootcamp at Redi School of Digital Integration in June 2025.
 
-```bash
+Milestones of the Fullstack Project:
+
+## Milestone 1 - Next.js Basics
+
+Learning Objectives
+
+Understand Next.js Basics:
+
+The difference between a React SPA and a Next.js application.
+The App Router in Next.js and how it differs from React Router.
+Server-side rendering (SSR) vs. static site generation (SSG).
+Set Up a Next.js Project:
+
+Installing Next.js and creating a structured project.
+Understanding the file-based routing system.
+Fetching Data in Next.js:
+
+Learn how SSR and SSG impact fetching external data.
+Use fetch() and API routes to retrieve tweets from an external API.
+Build a Simple Twitter Clone (Part 1):
+
+Design a basic Tweet feed component.
+Fetch dummy tweets from an API and display them dynamically.
+
+Setting Up Next.js Project:
+npx create-next-app@latest twitter-clone-new
+cd twitter-clone-new
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+App runs at http://localhost:3000
+Uses App Router instead of Page Router
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+## Milestone 2 - Tailwind CSS & UI Design
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Learning Objectives:
 
-## Learn More
+Understanding the utility-first approach.
+Setting up Tailwind in a Next.js project.
+Building a Consistent UI
 
-To learn more about Next.js, take a look at the following resources:
+Creating reusable components using Tailwind.
+Using spacing, typography, and color utilities.
+Responsive Design
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Implementing a mobile-first design.
+Utilizing breakpoints for different screen sizes.
+Enhancing the Twitter Clone
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Improving the tweet cards, navigation bar, and user profiles.
+Adding hover effects, animations, and dark mode.
 
-## Deploy on Vercel
+## Milestone 3 - API, Routing, Backend
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Learning Objectives:
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Getting to know backend development.
+Learning how to create backend endpoints using Next.js API routes.
+At this point: Not using a database, we are storing data in files.
+
+## Milestone 4 - Introduction to Databases
+
+Learning Objectives:
+
+Getting to know about Relational and Non-Relational databases
+Using databases in twitter-clone-new
+Posting tweets
+Defining schemas in ORM (Object-Relational Mapper) - mongoose
+Connecting to MongoDB and Posting tweets
+
+## Milestone 5 - API, Routing & Security
+
+Learning Objectives:
+
+Building dynamic API routes to interact with a database
+Applying Server-Side Rendering (SSR) and Incremental Static Regeneration (ISR) for optimal performance
+Managing global state using Context API - Creating a Global Auth Context
+-- Avoids prop drilling
+-- Centralized authentication state management
+-- Allows global access to user data
+
+Creating User Registration & Login
+-- Creating a sign-up and login form
+-- Storing user credentials securely in MongoDB
+-- Hashing passwords using bcrypt
+
+JWT Authentication
+-- Generating JWT tokens upon login
+-- Storing tokens in cookies for persistence
+-- Using tokens to authenticate API requests
+
+Connecting to MongoDB for Users and Likes

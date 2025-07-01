@@ -33,6 +33,7 @@ export default function ButtonLike({ tweetId }) {
   return (
     <button
       onClick={(e) => {
+        e.preventDefault();
         e.stopPropagation();
         handleLike();
       }}
