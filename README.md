@@ -2,7 +2,9 @@ Twitter Clone - This is a [Next.js](https://nextjs.org) project.
 
 ## About the project
 
-This project was created to learn Next.js (including Server‑Side Rendering and Client‑Side Rendering), dynamic routing, API integration, authentication workflows, MongoDB database integration using Mongoose schemas, as well as Tailwind CSS. It was completed as an assignment during a Full‑Stack bootcamp at Redi School of Digital Integration in June 2025.
+This project was created to learn Next.js (including Server‑Side Rendering and Client‑Side Rendering), dynamic routing, API integration, authentication workflows, MongoDB database integration using Mongoose schemas, as well as Tailwind CSS.
+It was completed as an assignment during a Full Stack Web Development Bootcamp at
+[ReDI School of Digital Integration] (https://www.redi-school.org/) in June 2025.
 
 Milestones of the Fullstack Project:
 
